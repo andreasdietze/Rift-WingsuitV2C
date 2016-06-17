@@ -7,9 +7,10 @@
 *.exe
 
 # Unity Cache for Server #
-Projekt/Rift Wingsuit - Server/RiftWingsuitServer_Data/*
-Projekt/Rift Wingsuit - Server/Library/*
+# Projekt/Rift Wingsuit - Server/RiftWingsuitServer_Data/*
+# Projekt/Rift Wingsuit - Server/Library/*
 
 # Unity Cache for Client #
 Projekt/Rift Wingsuit - Spec Client/RiftWingsuitSpecClient_Data/*
 Projekt/Rift Wingsuit - Spec Client/Library/*
+Projekt/Rift Wingsuit - Spec Client/Assets/World2/MountRainier2/Terrains/*
