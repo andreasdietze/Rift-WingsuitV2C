@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{99650A95-5DE8-D7E4-11AF-172BBCF770B2}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-UnityScript-firstpass</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_2;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>D:/Unity502f1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>D:/Unity502f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Standard Assets\Particles\Legacy Particles\TimedObjectDestructor.js" />
+     <None Include="Assets\Plugins\donotdelete.txt" />
+     <None Include="Assets\World1\Clouds\LazyClouds\shaders\LazyClouds.shader" />
+     <None Include="Assets\World1\Palm Trees\Shaders\WavingDoublePassNoCullBackface.shader" />
+     <None Include="Assets\World1\Water\Shader\Fourier.shader" />
+     <None Include="Assets\World1\Clouds\CloudsToy\Shaders\CloudBright.shader" />
+     <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
+     <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\Tree.cginc" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\FastTreeCreatorLeaves.shader" />
+     <None Include="Assets\World1\Water\Fluss\WaterShader_2 - Quelle.shader" />
+     <None Include="Assets\World1\Clouds\LazyFog\Shaders\LazyFog.shader" />
+     <None Include="Assets\World1\Water\Shader\OceanPro.shader" />
+     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\TreeVertexLit.cginc" />
+     <None Include="Assets\World1\Shaders\TerrBumpAddPass.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\BillboardTree.shader" />
+     <None Include="Assets\World1\Clouds\CloudsToy\ChangeLog.txt" />
+     <None Include="Assets\World1\Water\Shader\InitSpectrum.shader" />
+     <None Include="Assets\World1\Shaders\TerrBumpFirstPass.shader" />
+     <None Include="Assets\World1\Clouds\LazyFog\Instructions.txt" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\FastTreeCreatorLeavesOptimized.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\Vegetation-TwoPassUnlit.shader" />
+     <None Include="Assets\World1\Palm Trees\Shaders\WavingDoublePassCullBackface.shader" />
+     <None Include="Assets\Plugins\x86\donotdelete.txt" />
+     <None Include="Assets\World1\Clouds\CloudsToy\Shaders\CloudRealistic.shader" />
+     <None Include="Assets\World1\Water\Meer\WaterShader_2 - Meer.shader" />
+     <None Include="Assets\World1\Movinarc\PackageUninstaller\README.txt" />
+     <None Include="Assets\World1\Water\Krater\WaterShader_2 - Krater.shader" />
+     <None Include="Assets\World1\skyscrapers\shaders\building.shader" />
+     <None Include="Assets\World1\Water\Quelle_2\WaterShader_2 - Quelle_2.shader" />
+     <None Include="Assets\World1\Water\Quelle\WaterShader_2 - Quelle.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Unity502f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="XInputDotNetPure">
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
+ </Reference>
+ <Reference Include="OpenNI.Net">
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/OpenNI.Net.dll</HintPath>
+ </Reference>
+ <Reference Include="ZDK">
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/ZDK.dll</HintPath>
+ </Reference>
+ <Reference Include="Cloudstoyv5">
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/World1/Clouds/CloudsToy/DLL/Cloudstoyv5.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>D:/Unity502f1/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

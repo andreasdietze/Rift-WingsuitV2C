@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: b2c5038f076272045a229c76524684df
+timeCreated: 1472412024
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Camera
+    100004: Chest
+    100006: Chest_end
+    100008: driverbody.001
+    100010: driverhelmet
+    100012: drivervisor
+    100014: FootL
+    100016: FootL_end
+    100018: FootR
+    100020: FootR_end
+    100022: HandL
+    100024: HandL_end
+    100026: HandR
+    100028: HandR_end
+    100030: Lamp
+    100032: LowerArmL
+    100034: LowerArmR
+    100036: LowerLegL
+    100038: LowerLegR
+    100040: LowerSpine
+    100042: MiddleSpine
+    100044: ShoulderL
+    100046: ShoulderR
+    100048: UpperArmL
+    100050: UpperArmR
+    100052: UpperLegL
+    100054: UpperLegR
+    100056: //RootNode
+    400000: Armature
+    400002: Camera
+    400004: Chest
+    400006: Chest_end
+    400008: driverbody.001
+    400010: driverhelmet
+    400012: drivervisor
+    400014: FootL
+    400016: FootL_end
+    400018: FootR
+    400020: FootR_end
+    400022: HandL
+    400024: HandL_end
+    400026: HandR
+    400028: HandR_end
+    400030: Lamp
+    400032: LowerArmL
+    400034: LowerArmR
+    400036: LowerLegL
+    400038: LowerLegR
+    400040: LowerSpine
+    400042: MiddleSpine
+    400044: ShoulderL
+    400046: ShoulderR
+    400048: UpperArmL
+    400050: UpperArmR
+    400052: UpperLegL
+    400054: UpperLegR
+    400056: //RootNode
+    2300000: driverhelmet
+    2300002: drivervisor
+    3300000: driverhelmet
+    3300002: drivervisor
+    4300000: driverbody.001
+    4300002: driverhelmet
+    4300004: drivervisor
+    9500000: //RootNode
+    13700000: driverbody.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

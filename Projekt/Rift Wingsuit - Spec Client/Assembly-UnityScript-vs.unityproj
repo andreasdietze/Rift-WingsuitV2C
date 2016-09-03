@@ -46,37 +46,52 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Palm Trees\Scripts\WavingAnimation Script.js" />
+     <Compile Include="Assets\World1\Palm Trees\Scripts\WavingAnimation Script.js" />
      <None Include="Assets\Plugins\donotdelete.txt" />
-     <None Include="Assets\Palm Trees\Shaders\WavingDoublePassNoCullBackface.shader" />
-     <None Include="Assets\Water\Shader\Fourier.shader" />
+     <None Include="Assets\World1\Clouds\LazyClouds\shaders\LazyClouds.shader" />
+     <None Include="Assets\World1\Palm Trees\Shaders\WavingDoublePassNoCullBackface.shader" />
+     <None Include="Assets\World1\Water\Shader\Fourier.shader" />
+     <None Include="Assets\World1\Clouds\CloudsToy\Shaders\CloudBright.shader" />
      <None Include="Assets\Plugins\Android\assets\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
-     <None Include="Assets\Water\Fluss\WaterShader_2 - Quelle.shader" />
-     <None Include="Assets\Water\Shader\OceanPro.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\Tree.cginc" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\FastTreeCreatorLeaves.shader" />
+     <None Include="Assets\World1\Water\Fluss\WaterShader_2 - Quelle.shader" />
+     <None Include="Assets\World1\Clouds\LazyFog\Shaders\LazyFog.shader" />
+     <None Include="Assets\World1\Water\Shader\OceanPro.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Shaders\TerrBumpAddPass.shader" />
-     <None Include="Assets\Water\Shader\InitSpectrum.shader" />
-     <None Include="Assets\Shaders\TerrBumpFirstPass.shader" />
-     <None Include="Assets\Palm Trees\Shaders\WavingDoublePassCullBackface.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\TreeVertexLit.cginc" />
+     <None Include="Assets\World1\Shaders\TerrBumpAddPass.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\BillboardTree.shader" />
+     <None Include="Assets\World1\Clouds\CloudsToy\ChangeLog.txt" />
+     <None Include="Assets\World1\Water\Shader\InitSpectrum.shader" />
+     <None Include="Assets\World1\Shaders\TerrBumpFirstPass.shader" />
+     <None Include="Assets\World1\Clouds\LazyFog\Instructions.txt" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\FastTreeCreatorLeavesOptimized.shader" />
+     <None Include="Assets\World2\TerrainComposerExamples\Shaders\Vegetation-TwoPassUnlit.shader" />
+     <None Include="Assets\World1\Palm Trees\Shaders\WavingDoublePassCullBackface.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
-     <None Include="Assets\Water\Meer\WaterShader_2 - Meer.shader" />
-     <None Include="Assets\Movinarc\PackageUninstaller\README.txt" />
-     <None Include="Assets\Water\Krater\WaterShader_2 - Krater.shader" />
-     <None Include="Assets\skyscrapers\shaders\building.shader" />
-     <None Include="Assets\Water\Quelle_2\WaterShader_2 - Quelle_2.shader" />
-     <None Include="Assets\Water\Quelle\WaterShader_2 - Quelle.shader" />
+     <None Include="Assets\World1\Clouds\CloudsToy\Shaders\CloudRealistic.shader" />
+     <None Include="Assets\World1\Water\Meer\WaterShader_2 - Meer.shader" />
+     <None Include="Assets\World1\Movinarc\PackageUninstaller\README.txt" />
+     <None Include="Assets\World1\Water\Krater\WaterShader_2 - Krater.shader" />
+     <None Include="Assets\World1\skyscrapers\shaders\building.shader" />
+     <None Include="Assets\World1\Water\Quelle_2\WaterShader_2 - Quelle_2.shader" />
+     <None Include="Assets\World1\Water\Quelle\WaterShader_2 - Quelle.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity502f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="XInputDotNetPure">
- <HintPath>C:/Users/Bambi/Desktop/Git/Rift-Wingsuit/Projekt/Rift Wingsuit - Spec Client/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
  </Reference>
  <Reference Include="OpenNI.Net">
- <HintPath>C:/Users/Bambi/Desktop/Git/Rift-Wingsuit/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/OpenNI.Net.dll</HintPath>
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/OpenNI.Net.dll</HintPath>
  </Reference>
  <Reference Include="ZDK">
- <HintPath>C:/Users/Bambi/Desktop/Git/Rift-Wingsuit/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/ZDK.dll</HintPath>
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/ZigFu/Scripts/_Internal/ZDK.dll</HintPath>
+ </Reference>
+ <Reference Include="Cloudstoyv5">
+ <HintPath>C:/Users/Bambi/Desktop/Git/RWV2/Rift-WingsuitV2C/Projekt/Rift Wingsuit - Spec Client/Assets/World1/Clouds/CloudsToy/DLL/Cloudstoyv5.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>D:/Unity502f1/Editor/Data/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
