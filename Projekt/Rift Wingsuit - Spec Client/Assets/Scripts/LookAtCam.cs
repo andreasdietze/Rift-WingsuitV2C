@@ -64,7 +64,7 @@ public class LookAtCam : MonoBehaviour {
 	public bool freeCam 		= false;
 
 	// Instance to network managing. Verifies that client has joind a server.
-	private NetworkManager nManager;
+	public NetworkManager nManager;
 
 	// Access to player script
 	private Player player;
@@ -85,8 +85,8 @@ public class LookAtCam : MonoBehaviour {
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 		
 		// Find networkManager
-		nManager = (NetworkManager)GameObject.FindGameObjectWithTag("Network").GetComponent("NetworkManager");
-
+		//nManager = (NetworkManager)GameObject.FindGameObjectWithTag("Network").GetComponent("NetworkManager");
+		//Debug.Log(nManager.useOwnMasterServer);
 		// Save properties by unity settings
 		oldMinDistToPlayer = minDistanceToPlayer;
 		oldMaxDistToPlayer = maxDistanceToPlayer;
@@ -108,7 +108,7 @@ public class LookAtCam : MonoBehaviour {
 		if (nManager.serverJoined) {
 			try {
 				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
-				ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation;
+				//ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation;
 				//Debug.Log("ovrRot: " + ovrRot);
 				target = GameObject.FindGameObjectWithTag ("Player").transform;
 			} catch (UnityException e) {
