@@ -64,7 +64,7 @@ public class LookAtCam : MonoBehaviour {
 	public bool freeCam 		= false;
 
 	// Instance to network managing. Verifies that client has joind a server.
-	public NetworkManager nManager;
+	public Netz nManager;
 
 	// Access to player script
 	private Player player;
@@ -85,8 +85,9 @@ public class LookAtCam : MonoBehaviour {
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").transform;
 		
 		// Find networkManager
-		//nManager = (NetworkManager)GameObject.FindGameObjectWithTag("Network").GetComponent("NetworkManager");
+		nManager = (Netz)GameObject.FindGameObjectWithTag("Network").GetComponent("Netz");
 		//Debug.Log(nManager.useOwnMasterServer);
+		
 		// Save properties by unity settings
 		oldMinDistToPlayer = minDistanceToPlayer;
 		oldMaxDistToPlayer = maxDistanceToPlayer;
@@ -108,7 +109,11 @@ public class LookAtCam : MonoBehaviour {
 		if (nManager.serverJoined) {
 			try {
 				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
-				//ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation;
+				
+				if(enableOVROrientation)
+					ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation;
+				else
+					ovrRot = Quaternion.identity;
 				//Debug.Log("ovrRot: " + ovrRot);
 				target = GameObject.FindGameObjectWithTag ("Player").transform;
 			} catch (UnityException e) {
@@ -344,7 +349,7 @@ public class LookAtCam : MonoBehaviour {
 	}
 
     private void OnGUI() {
-		if(nManager.serverJoined && showText)
-			GUI.Label(textArea, ovrRot.ToString());
+		//if(nManager.serverJoined && showText)
+			//GUI.Label(textArea, ovrRot.ToString());
     }
 }

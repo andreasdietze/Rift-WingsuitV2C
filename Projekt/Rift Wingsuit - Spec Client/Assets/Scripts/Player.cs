@@ -21,11 +21,21 @@ public class Player : MonoBehaviour
 	// OVR cam fin orientation
 	public Quaternion syncEndOVRRotation = Quaternion.identity;
 	private Quaternion syncStartOVRRotation = Quaternion.identity;
-	public Quaternion lerpedOVRRotation = Quaternion.identity;
+	//public Quaternion lerpedOVRRotation = Quaternion.identity;
+	
+	// Kinect values
+	private float syncEndDeltaY = 0f;
+	private float syncStartDeltaY = 0f;
+
+	private float syncEndDeltaZ = 0f;
+	private float syncStartDeltaZ = 0f;
 	
 	// Player status
 	public int score = 0;
 	public int finScore =0 ;
+	
+	// Helper
+	public ArmSync armSync = null;
 	
 	// Only receive and process data
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info){
@@ -33,6 +43,8 @@ public class Player : MonoBehaviour
 		Vector3 syncVelocity = Vector3.zero;
 		Quaternion syncRotation = Quaternion.identity;
 		Quaternion syncOVRRotation = Quaternion.identity;
+		float syncDeltaY = 0f;
+		float syncDeltaZ = 0f;
 		int syncScore = 0;
 	
 		if (stream.isWriting){ // Send data
@@ -51,6 +63,9 @@ public class Player : MonoBehaviour
 			stream.Serialize(ref syncRotation);
 			// OVR cam view has only to be received
 			stream.Serialize(ref syncOVRRotation);
+			// Also Kinect values
+			stream.Serialize(ref syncDeltaY);
+			stream.Serialize(ref syncDeltaZ);
 			stream.Serialize(ref syncScore);
 			
 			syncTime = 0f;
@@ -66,6 +81,12 @@ public class Player : MonoBehaviour
 			// at the moment player rotates by rift -> this rot is for head only -> works
 			syncEndOVRRotation = syncOVRRotation; 
 			syncStartOVRRotation = GetComponent<Rigidbody>().rotation;
+			
+			syncEndDeltaY = syncDeltaY;
+			syncStartDeltaY = armSync.rotY;
+			
+			syncEndDeltaZ = syncDeltaZ;
+			syncStartDeltaZ = armSync.rotZ;			
 			
 			score = syncScore;
 			//Debug.Log(syncScore);
@@ -90,6 +111,8 @@ public class Player : MonoBehaviour
 		syncTime += Time.deltaTime;
 		GetComponent<Rigidbody>().position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
 		GetComponent<Rigidbody>().rotation =  Quaternion.Lerp(syncStartRotation, syncEndRotation, syncTime / syncDelay);
+		armSync.rotY = Mathf.Lerp(syncStartDeltaY, syncEndDeltaY, syncTime / syncDelay);
+		armSync.rotZ = Mathf.Lerp(syncStartDeltaZ, syncEndDeltaZ, syncTime / syncDelay);
 	}
 	
 	

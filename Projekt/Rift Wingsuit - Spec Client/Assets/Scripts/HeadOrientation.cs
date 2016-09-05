@@ -4,19 +4,34 @@ using System.Collections;
 public class HeadOrientation : MonoBehaviour {
 
 	// Script access
-	public NetworkManager nManager;
+	private NetworkManager nManager;
 	private Player player;
 
 	// Head orientation by oculus
 	private Quaternion headOrientation;
 
-	// Debug
-	bool showText = true;
-	Rect textArea = new Rect(300,30,Screen.width, Screen.height);
+
+	private Netz netz;
+	
+	private Transform head;
+	private Transform cam;
+	
+	private LookAtCam lac;
 	
 	void Start () {
 		// Find networkManager
-		//nManager = (NetworkManager)GameObject.FindGameObjectWithTag("Network").GetComponent("NetworkManager");
+		netz = (Netz)GameObject.FindGameObjectWithTag("Network").GetComponent("Netz");
+		Debug.Log(netz);
+		// Get player head
+		head =  GameObject.Find("driverhelmet").transform;
+		// Get player script
+		player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
+		Debug.Log(player);
+		// Get look at cam 
+		lac = (LookAtCam)GameObject.FindGameObjectWithTag("MainCamera").GetComponent("LookAtCam");
+		
+		//head.transform.position = (player.transform.position);// + (player.transform.rotation * (Vector3.one));
+		
 	}
 	
 	// Update is called once per frame
@@ -24,23 +39,34 @@ public class HeadOrientation : MonoBehaviour {
 
 		// Check if client has joined a server.
 		// This is necessary because the playerprefab is automatically generated.
-		/*Debug.Log(nManager);
-		if (nManager.serverJoined) {
+		if (netz.serverJoined) {
 			try {
 				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
-				headOrientation = player.syncEndOVRRotation;//lerpedOVRRotation;
+				cam = GameObject.FindGameObjectWithTag ("MainCamera").transform;
+				if(lac.enableOVROrientation)
+					headOrientation = player.syncEndOVRRotation;//lerpedOVRRotation;
+				else 
+					headOrientation = Quaternion.identity;
 			} catch (UnityException e) {
 				Debug.Log(e.Message);
 			}
-		}*/
+		}
 		
 		//transform.rotation = headOrientation * Quaternion.Euler(new Vector3(0.0f, 0.0f, -90.0f));
+
+		//head.transform.position = head.transform.position + (headOrientation * Vector3.up); // * (Vector3.up * 1.8f));
+		//head.transform.position = player.transform.position + new Vector3(-10f, 0f, 0f);
+		head.transform.rotation = headOrientation;
 	}
 
-
+	
+	// Debug
+	bool showText = true;
+	Rect textArea = new Rect(300,30,Screen.width, Screen.height);
+	
 	private void OnGUI()
 	{
-		//if(nManager.serverJoined && showText)
-			//GUI.Label(textArea, headOrientation.ToString());
+		if(netz.serverJoined && showText)
+			GUI.Label(textArea, headOrientation.ToString());
 	}
 }
