@@ -111,7 +111,7 @@ public class LookAtCam : MonoBehaviour {
 				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
 				
 				if(enableOVROrientation)
-					ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation;
+					ovrRot = player.syncEndOVRRotation;//lerpedOVRRotation; syncEndOVRRotation
 				else
 					ovrRot = Quaternion.identity;
 				//Debug.Log("ovrRot: " + ovrRot);

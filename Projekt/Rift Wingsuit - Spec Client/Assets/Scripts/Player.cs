@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 	// OVR cam fin orientation
 	public Quaternion syncEndOVRRotation = Quaternion.identity;
 	private Quaternion syncStartOVRRotation = Quaternion.identity;
-	//public Quaternion lerpedOVRRotation = Quaternion.identity;
+	public Quaternion lerpedOVRRotation = Quaternion.identity;
 	
 	// Kinect values
 	private float syncEndDeltaY = 0f;
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
 		syncTime += Time.deltaTime;
 		GetComponent<Rigidbody>().position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
 		GetComponent<Rigidbody>().rotation =  Quaternion.Lerp(syncStartRotation, syncEndRotation, syncTime / syncDelay);
+		//lerpedOVRRotation = Quaternion.Slerp(syncStartOVRRotation, syncEndOVRRotation, syncTime / syncDelay);
 		armSync.rotY = Mathf.Lerp(syncStartDeltaY, syncEndDeltaY, syncTime / syncDelay);
 		armSync.rotZ = Mathf.Lerp(syncStartDeltaZ, syncEndDeltaZ, syncTime / syncDelay);
 	}

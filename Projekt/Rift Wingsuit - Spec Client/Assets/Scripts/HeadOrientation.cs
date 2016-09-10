@@ -31,6 +31,7 @@ public class HeadOrientation : MonoBehaviour {
 		lac = (LookAtCam)GameObject.FindGameObjectWithTag("MainCamera").GetComponent("LookAtCam");
 		
 		//head.transform.position = (player.transform.position);// + (player.transform.rotation * (Vector3.one));
+		//head.transform.position = player.transform.position + (headOrientation * Vector3.up);
 		
 	}
 	
@@ -43,8 +44,8 @@ public class HeadOrientation : MonoBehaviour {
 			try {
 				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
 				cam = GameObject.FindGameObjectWithTag ("MainCamera").transform;
-				if(lac.enableOVROrientation)
-					headOrientation = player.syncEndOVRRotation;//lerpedOVRRotation;
+				if(lac.enableOVROrientation) 
+					headOrientation = player.syncEndOVRRotation;//lerpedOVRRotation;  // syncEndOVRRotation
 				else 
 					headOrientation = Quaternion.identity;
 			} catch (UnityException e) {
@@ -53,9 +54,7 @@ public class HeadOrientation : MonoBehaviour {
 		}
 		
 		//transform.rotation = headOrientation * Quaternion.Euler(new Vector3(0.0f, 0.0f, -90.0f));
-
-		//head.transform.position = head.transform.position + (headOrientation * Vector3.up); // * (Vector3.up * 1.8f));
-		//head.transform.position = player.transform.position + new Vector3(-10f, 0f, 0f);
+		//transform.rotation = headOrientation * Quaternion.Euler(new Vector3(0.0f, 0.0f, -90.0f));
 		head.transform.rotation = headOrientation;
 	}
 
