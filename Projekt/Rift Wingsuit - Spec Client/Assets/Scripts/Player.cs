@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 			
 			// at the moment player rotates by rift -> this rot is for head only -> works
 			syncEndOVRRotation = syncOVRRotation; 
-			syncStartOVRRotation = GetComponent<Rigidbody>().rotation;
+			syncStartOVRRotation = GetComponent<Rigidbody>().rotation; // * Quaternion.Euler(90f, 0f, 0f);
 			
 			syncEndDeltaY = syncDeltaY;
 			syncStartDeltaY = armSync.rotY;
@@ -111,7 +111,7 @@ public class Player : MonoBehaviour
 		syncTime += Time.deltaTime;
 		GetComponent<Rigidbody>().position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
 		GetComponent<Rigidbody>().rotation =  Quaternion.Lerp(syncStartRotation, syncEndRotation, syncTime / syncDelay);
-		//lerpedOVRRotation = Quaternion.Slerp(syncStartOVRRotation, syncEndOVRRotation, syncTime / syncDelay);
+		lerpedOVRRotation = Quaternion.Slerp(syncStartOVRRotation, syncEndOVRRotation, syncTime / syncDelay);
 		armSync.rotY = Mathf.Lerp(syncStartDeltaY, syncEndDeltaY, syncTime / syncDelay);
 		armSync.rotZ = Mathf.Lerp(syncStartDeltaZ, syncEndDeltaZ, syncTime / syncDelay);
 	}
