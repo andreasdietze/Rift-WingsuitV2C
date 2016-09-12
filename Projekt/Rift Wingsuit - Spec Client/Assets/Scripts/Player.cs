@@ -34,6 +34,10 @@ public class Player : MonoBehaviour
 	public int score = 0;
 	public int finScore =0 ;
 	
+	// Weather type
+	public int weatherType = 0;
+	public int finWeather = 0;
+	
 	// Helper
 	public ArmSync armSync = null;
 	
@@ -46,6 +50,7 @@ public class Player : MonoBehaviour
 		float syncDeltaY = 0f;
 		float syncDeltaZ = 0f;
 		int syncScore = 0;
+		int syncWeatherType = 0;
 	
 		if (stream.isWriting){ // Send data
 			/*syncPosition = GetComponent<Rigidbody>().position;
@@ -67,6 +72,7 @@ public class Player : MonoBehaviour
 			stream.Serialize(ref syncDeltaY);
 			stream.Serialize(ref syncDeltaZ);
 			stream.Serialize(ref syncScore);
+			stream.Serialize(ref syncWeatherType);
 			
 			syncTime = 0f;
 			syncDelay = Time.time - lastSynchronizationTime;
@@ -90,6 +96,9 @@ public class Player : MonoBehaviour
 			
 			score = syncScore;
 			//Debug.Log(syncScore);
+			
+			weatherType = syncWeatherType;
+			
 		}
 	}
 	
@@ -103,6 +112,7 @@ public class Player : MonoBehaviour
 		}
 		else{
 			SyncedMovement();
+			SyncedSettings();
 		}
 	}
 	
@@ -114,6 +124,12 @@ public class Player : MonoBehaviour
 		lerpedOVRRotation = Quaternion.Slerp(syncStartOVRRotation, syncEndOVRRotation, syncTime / syncDelay);
 		armSync.rotY = Mathf.Lerp(syncStartDeltaY, syncEndDeltaY, syncTime / syncDelay);
 		armSync.rotZ = Mathf.Lerp(syncStartDeltaZ, syncEndDeltaZ, syncTime / syncDelay);
+	}
+	
+	private void SyncedSettings(){
+		finScore = score;
+		finWeather = weatherType;
+		//Debug.Log(finWeather);
 	}
 	
 	

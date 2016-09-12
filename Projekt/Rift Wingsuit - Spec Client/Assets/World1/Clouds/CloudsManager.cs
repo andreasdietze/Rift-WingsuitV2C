@@ -66,13 +66,18 @@ public class CloudsManager : MonoBehaviour {
     }
 
 	// Different settings for cloud systems.
-	public enum Weather  {Sunny, Cloudy, Stormy, Rainy};
+	//public enum Weather  {Sunny, Cloudy, Stormy, Rainy};
+	public int weather = 0; 
     private enum CloudSize { Small, Medium, Large, XXL };
-	public Weather weather = Weather.Sunny;
+	//public Weather weather = Weather.Sunny;
 
     private GameObject topLevel;
     private GameObject midLevel;
     private GameObject mountainLevel;
+	
+	private Netz netz;
+	private Player player;
+	private int weatherByNetwork = 0;
 
     private CloudsToy GetSettingsFrom(GameObject obj)
     {
@@ -133,7 +138,7 @@ public class CloudsManager : MonoBehaviour {
         setCloudSize(midLevelScript, CloudSize.Large);
         CloudColor.SetRainyColor(midLevelScript);
 
-        mountainLevel.SetActive(false);
+        mountainLevel.SetActive(true);
     }
 
 	void Start () {
@@ -141,9 +146,12 @@ public class CloudsManager : MonoBehaviour {
         topLevel = GameObject.Find ("TopLevel");
 		midLevel = GameObject.Find ("MidLevel");
 		mountainLevel = GameObject.Find ("MountainClouds");
+		
+		// Find networkManager
+		netz = (Netz)GameObject.FindGameObjectWithTag("Network").GetComponent("Netz");
 
 		// Default and initial weather is sunny. 
-		switch(weather) {
+		/*switch(weather) {
 			// Only skydome clouds.
 		case Weather.Sunny :
                 setSunny();
@@ -161,10 +169,62 @@ public class CloudsManager : MonoBehaviour {
             break;
 		default: weather = Weather.Sunny;
 			break;
+		}*/
+		
+		switch(weather) {
+			// Only skydome clouds.
+		case 0 :
+                setSunny();
+			break;
+			// Top and midLevel clouds.
+		case 1 :
+            setCloudy();
+			break;
+			// All cloud systems.
+		case 2 :
+            setStormy();
+			break;
+        case 3:
+            setRainy();
+            break;
+		default: weather = 0;
+			break;
 		}
 	}
 
 	void Update () {
-	
+		if (netz.serverJoined) {
+			try {
+				player = (Player)GameObject.FindGameObjectWithTag ("Player").GetComponent("Player");
+				weatherByNetwork = player.finWeather; 
+				Debug.Log(weatherByNetwork);
+				
+				switch(weatherByNetwork) {
+						// Only skydome clouds.
+					case 0 :
+							setSunny();
+						break;
+						// Top and midLevel clouds.
+					case 1 :
+						setCloudy();
+						break;
+						// All cloud systems.
+					case 2 :
+						setStormy();
+						break;
+					case 3:
+						setRainy();
+						break;
+					default: weatherByNetwork = 0;
+						break;
+					}
+				} catch (UnityException e) {
+					Debug.Log(e.Message);
+				}
+			
+			
+			
+		}
+		
 	}
 }
