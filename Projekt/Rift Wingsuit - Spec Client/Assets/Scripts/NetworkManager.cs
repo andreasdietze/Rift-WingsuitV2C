@@ -19,14 +19,16 @@ public class NetworkManager : MonoBehaviour
 	// User for seperate master server
 	// Note: need to set your own ip (local or net)
 	public bool useOwnMasterServer = true;
-	private string omsip = GameController.instance.ip;   //"192.168.0.194";  GameController.instance.ip;
+	private string omsip = "192.168.77.60";   //"192.168.0.194";  GameController.instance.ip;
 	private int omsport = 25000;
+
 	
 	// Server joined flag for instantiating player prefab
 	public bool serverJoined = false;
 	
 	// Provide client network gui (todo: extend GUI !!!!)
 	void OnGUI(){
+			Debug.Log("fooooo");
 		// Network connection to global or own master server
 		if (!Network.isClient && !Network.isServer){
 			if (GUI.Button(new Rect(100, 100, 250, 100), "Refresh Hosts")){
@@ -79,6 +81,7 @@ public class NetworkManager : MonoBehaviour
 	// Join global
 	private void JoinServer(HostData hostData){
 		Network.Connect(hostData);
+
 	}
 	
 	// Set server joined flag in any case

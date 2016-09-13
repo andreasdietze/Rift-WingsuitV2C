@@ -19,7 +19,7 @@ public class Netz : MonoBehaviour
 	// User for seperate master server
 	// Note: need to set your own ip (local or net)
 	public bool useOwnMasterServer = true;
-	private string omsip = "192.168.0.194";
+    private string omsip = GameController.instance.ip;
 	private int omsport = 25000;
 	
 	// Server joined flag for instantiating player prefab
